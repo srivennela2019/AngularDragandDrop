@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style='display:flex'>
+  <div cdkDropList [cdkDropListData]='artists'
+  [cdkDropListConnectedTo]='secondList' #firstList='cdkDropList' (cdkDropListDropped)="drop($event)" style="width:50%">
+    <div  class="pop" *ngFor="let artist of artists" cdkDrag >{{artist}}</div>
+  </div>
+  <div cdkDropList [cdkDropListData]='artists2'
+  [cdkDropListConnectedTo]='firstList' #secondList='cdkDropList' (cdkDropListDropped)="drop($event)" style="width:50%">
+    <div  class="pop" *ngFor="let artist2 of artists2" cdkDrag >{{artist2}}</div>
+  </div>
+  
+</div>
